@@ -8,11 +8,9 @@
     <p style="text-align: right;">
         <a href="{{ route('invoices.create') }}">+ Create Invoice</a>
     </p>
-
     @if (session('success'))
         <p style="color: green;">{{ session('success') }}</p>
     @endif
-
     <table border="1" cellpadding="8" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -41,7 +39,6 @@
             @endforelse
         </tbody>
     </table>
-
     <div style="margin-top: 15px;">
         {{ $invoices->links() }}
     </div>

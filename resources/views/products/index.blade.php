@@ -2,7 +2,6 @@
 
 @section('content')
     <h2>Product List</h2>
-
     @if (session('success'))
         <p style="color: green;">{{ session('success') }}</p>
     @endif
@@ -46,7 +45,6 @@
             @endforelse
         </tbody>
     </table>
-
     <div style="margin-top: 20px;">
         {{ $products->links() }}
     </div>

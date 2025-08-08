@@ -8,7 +8,6 @@
             max-width: 800px;
             margin: 30px auto;
         }
-
         a {
             margin-right: 10px;
         }
@@ -22,13 +21,11 @@
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Logout
             </a>
-
             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
         </div>
     @endauth
-
     @yield('content')
 </body>
 </html>

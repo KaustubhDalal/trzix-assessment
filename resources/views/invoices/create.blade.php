@@ -63,23 +63,19 @@
 
         <button type="submit">Save Invoice</button>
     </form>
-
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         const items = document.querySelectorAll('.item-block');
-
         items.forEach(item => {
             const productSelect = item.querySelector('select[name^="items"]');
             const qtyInput = item.querySelector('input[name$="[quantity]"]');
             const rateInput = item.querySelector('input[name$="[rate]"]');
             const amountInput = item.querySelector('input[name$="[amount]"]');
-
             productSelect.addEventListener('change', function () {
                 const rate = this.options[this.selectedIndex].dataset.rate || 0;
                 rateInput.value = rate;
                 amountInput.value = (rate * qtyInput.value).toFixed(2);
             });
-
             qtyInput.addEventListener('input', function () {
                 const rate = parseFloat(rateInput.value) || 0;
                 const qty = parseFloat(this.value) || 0;
@@ -88,5 +84,4 @@
         });
     });
 </script>
-
 @endsection

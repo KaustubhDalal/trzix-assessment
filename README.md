@@ -34,3 +34,9 @@ This project is built with Laravel 12 as part of an assessment to implement a pr
 4. php artisan migrate --seed
 
 5. php artisan serve
+
+6. Import database : laravel.sql file
+
+7. working demo : 
+- https://www.loom.com/share/9cd88ac6401a4385832483af12c9ffa1?sid=a0320194-faef-45bd-8a9f-b5f6552abb33
+- https://www.loom.com/share/d073561bbbdc40179c85409b9cfdfbe1?sid=b1801093-3bff-40a8-8dc4-fec9d81a9a04

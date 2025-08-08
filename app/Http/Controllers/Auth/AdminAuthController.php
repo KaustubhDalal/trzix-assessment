@@ -42,8 +42,10 @@ class AdminAuthController extends Controller
             'password' => Hash::make($validated['password']),
         ]);
 
-        Auth::guard('admin')->login($admin);
-        return redirect()->route('admin.dashboard');
+        // Auth::guard('admin')->login($admin);
+        // return redirect()->route('products.index');
+        return redirect()->route('admin.login')->with('success', 'Registration successful. Please login.');
+
     }
 
     public function showLogin()

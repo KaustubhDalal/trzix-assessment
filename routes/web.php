@@ -16,6 +16,7 @@ Route::get('/login', function () {
     return redirect('/admin/login');
 })->name('login');
 
+// admin routes
 Route::get('/admin/register', [AdminAuthController::class, 'showRegister'])->name('admin.register');
 Route::post('/admin/register', [AdminAuthController::class, 'register']);
 
