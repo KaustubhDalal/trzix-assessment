@@ -56,7 +56,7 @@ class InvoiceController extends Controller
             'items.*.amount' => 'required|numeric|min:0',
         ]);
 
-        // Step 1: Create Invoice
+        // Creating Invoice here
         $invoice = Invoice::create([
             'invoice_no' => $request->invoice_no,
             'customer_id' => $request->customer_id,
@@ -66,7 +66,7 @@ class InvoiceController extends Controller
 
         $total = 0;
 
-        // Step 2: Save line items
+        // Saving the line items here
         foreach ($request->items as $item) {
             $line = InvoiceItem::create([
                 'invoice_id' => $invoice->id,
@@ -78,7 +78,7 @@ class InvoiceController extends Controller
 
             $total += $line->amount;
 
-            // Step 3: Save custom fields for the line item
+            // sabving custom fields for line item here
             if (isset($item['custom_fields'])) {
                 foreach ($item['custom_fields'] as $fieldId => $value) {
                     \App\Models\InvoiceItemFieldValue::create([
@@ -90,7 +90,7 @@ class InvoiceController extends Controller
             }
         }
 
-        // Step 4: Update invoice with total
+        // updating invoice total amount
         $invoice->update(['total_amount' => $total]);
         
         return redirect()->route('invoices.index')->with('success', 'Invoice created successfully.');
